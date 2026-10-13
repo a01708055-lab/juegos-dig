@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GATO 16BITS</title>
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/gato.css">
+</head>
+<body>
+<div class="hud"><div class="p1">PLAYER X</div><div class="coins">GATO • TIC-TAC-TOE</div><div class="p2">PLAYER O</div></div>
+<div class="wrap">
+<a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
+<h1 class="game-title" style="color:#ff2fb3">❌ GATO ⭕</h1>
+<div class="scorebar"><div style="border-color:#ff2fb3">X: <span id="sx">0</span></div><div>EMPATES: <span id="sd">0</span></div><div style="border-color:#00e5ff">O: <span id="so">0</span></div></div>
+<div class="stage">
+<div class="mode-row"><button class="arcade-btn" id="modePvp">👥 2 JUGADORES</button><button class="arcade-btn cyan" id="modeCpu">🤖 VS CPU</button></div>
+<div class="turn pixel" id="turn">TURNO: X</div>
+<div class="board" id="board"></div>
+<div class="btn-row"><button class="arcade-btn yellow" id="resetRound">↻ RONDA</button><button class="arcade-btn green" id="resetAll">★ REINICIAR TODO</button></div>
+<p style="color:#8f83c7">3 en línea gana. X = rosa, O = cian.</p>
+</div>
+</div>
+<script src="js/gato.js"></script>
+</body>
+</html>

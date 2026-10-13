@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORLEONE'S ARCADE - VIDEO GAME 16BITS</title>
+<link rel="stylesheet" href="css/arcade.css">
+</head>
+<body>
+<div class="hud">
+  <div class="p1">PLAYER 01 <span class="hearts">❤❤❤🤍🤍</span></div>
+  <div class="coins">●●● COINS: <span id="coins">00</span> ⚡</div>
+  <div class="p2">PLAYER 02 <span class="blink">PRESS START</span></div>
+</div>
+
+<div class="hero">
+  <div class="neon-small">KORLEONE'S TATTOO ARCADE</div>
+  <h1 class="main-title">
+    <span class="l1">VIDEO</span><br>
+    <span class="l2">GAME</span><br>
+    <span class="l3">16BITS</span>
+  </h1>
+  <div class="neon-red">— TATTOO • KICKS • OPEN —</div>
+  <div class="subtitle">ELIGE TU JUEGO_ TUTORIAL_</div>
+</div>
+
+<div class="street"></div>
+
+<main class="grid">
+  <div class="card snake">
+    <div class="card-top">★ SNAKE ★</div>
+    <div class="card-body">
+      <div class="pixel-icon">🐍</div>
+      <p>Come píxeles, crece y no te muerdas. El clásico víbora neón.</p>
+      <div class="controls-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / WASD</div>
+      <a class="play-btn" href="snake.html">▶ JUGAR</a>
+    </div>
+  </div>
+
+  <div class="card tetris">
+    <div class="card-top">★ TETRIS ★</div>
+    <div class="card-body">
+      <div class="pixel-icon">🧱</div>
+      <p>Apila bloques, limpia líneas y sube de nivel. Velocidad 16-bit.</p>
+      <div class="controls-hint"><kbd>←</kbd><kbd>→</kbd> mover <kbd>↑</kbd> rotar <kbd>↓</kbd> bajar</div>
+      <a class="play-btn" href="tetris.html">▶ JUGAR</a>
+    </div>
+  </div>
+
+  <div class="card gato">
+    <div class="card-top">★ GATO ★</div>
+    <div class="card-body">
+      <div class="pixel-icon">❌⭕</div>
+      <p>Tic-tac-toe callejero. 2 jugadores o contra la CPU.</p>
+      <div class="controls-hint">CLIC / TAP para marcar</div>
+      <a class="play-btn" href="gato.html">▶ JUGAR</a>
+    </div>
+  </div>
+
+  <div class="card pong">
+    <div class="card-top">★ PONG ★</div>
+    <div class="card-body">
+      <div class="pixel-icon">🏓</div>
+      <p>Duelo de paletas neón contra la máquina. Primero a 5 gana.</p>
+      <div class="controls-hint"><kbd>W</kbd><kbd>S</kbd> / <kbd>↑</kbd><kbd>↓</kbd> / mouse</div>
+      <a class="play-btn" href="pong.html">▶ JUGAR</a>
+    </div>
+  </div>
+</main>
+
+<div class="street"></div>
+<footer>© 2026 KORLEONE'S ARCADE • INSERT COIN • HTML + CSS + JS • <span class="blink">PRESS START</span></footer>
+<script src="js/home.js"></script>
+</body>
+</html>

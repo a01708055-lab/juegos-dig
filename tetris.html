@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TETRIS 16BITS</title>
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/tetris.css">
+</head>
+<body>
+<div class="hud"><div class="p1">PLAYER 01</div><div class="coins">TETRIS • BEST: <span id="tBest">0</span></div><div class="p2"><span class="blink">PRESS START</span></div></div>
+<div class="wrap">
+<a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
+<h1 class="game-title" style="color:#00e5ff">🧱 TETRIS NEON</h1>
+<div class="scorebar"><div>SCORE <span id="tScore">0</span></div><div>LINES <span id="tLines">0</span></div><div>LEVEL <span id="tLevel">1</span></div></div>
+<div class="tetris-layout">
+<div class="stage"><canvas id="board" width="300" height="600"></canvas>
+<div class="btn-row"><button class="arcade-btn cyan" id="tStart">▶ START</button><button class="arcade-btn yellow" id="tPause">⏸</button><button class="arcade-btn" id="tReset">↻</button></div>
+<div class="mobile-pad"><button id="mLeft">◀</button><button id="mRot">⟳</button><button id="mRight">▶</button><button id="mDown">▼</button><button id="mDrop">⬇⬇</button><button id="mPause">⏸</button></div>
+</div>
+<div class="side"><h3 class="pixel" style="font-size:10px">NEXT</h3><canvas id="next" width="120" height="120"></canvas><h3 class="pixel" style="font-size:10px;margin-top:12px">CONTROLES</h3><p>← → mover<br>↑ rotar<br>↓ bajar<br>ESPACIO caer<br>P pausa</p></div>
+</div>
+</div>
+<div class="overlay" id="tOverlay"><div class="overlay-box"><h2>GAME OVER</h2><p id="tFinal">0 PTS</p><br><button class="arcade-btn cyan" id="tAgain">↻ OTRA VEZ</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/tetris.js"></script>
+</body>
+</html>

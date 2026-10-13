@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNAKE 16BITS</title>
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/snake.css">
+</head>
+<body>
+<div class="hud"><div class="p1">PLAYER 01</div><div class="coins">SNAKE • BEST: <span id="best">0</span></div><div class="p2"><span class="blink">● REC</span></div></div>
+<div class="wrap">
+<a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
+<h1 class="game-title" style="color:#39ff14">🐍 SNAKE NEON</h1>
+<div class="scorebar"><div>SCORE: <span id="score">0</span></div><div>LEN: <span id="len">1</span></div><div>SPEED: <span id="speed">1</span></div></div>
+<div class="stage">
+<canvas id="game" width="400" height="400"></canvas>
+<div class="btn-row"><button class="arcade-btn green" id="startBtn">▶ START</button><button class="arcade-btn yellow" id="pauseBtn">⏸ PAUSA</button><button class="arcade-btn" id="resetBtn">↻ RESET</button></div>
+<div class="mobile-pad"><span></span><button data-dir="up">▲</button><span></span><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div>
+<p style="color:#8f83c7">Flechas / WASD para moverse. Come lo verde.</p>
+</div>
+</div>
+<div class="overlay" id="overlay"><div class="overlay-box"><h2 id="ovTitle">GAME OVER</h2><p id="ovScore">SCORE 0</p><br><button class="arcade-btn green" id="againBtn">↻ JUGAR OTRA VEZ</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/snake.js"></script>
+</body>
+</html>

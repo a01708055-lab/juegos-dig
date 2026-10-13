@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PONG 16BITS</title>
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/pong.css">
+</head>
+<body>
+<div class="hud"><div class="p1">YOU <span id="hYou">0</span></div><div class="coins">PONG • FIRST TO 5</div><div class="p2">CPU <span id="hCpu">0</span></div></div>
+<div class="wrap">
+<a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
+<h1 class="game-title" style="color:#ff9a00">🏓 PONG NEON</h1>
+<div class="scorebar"><div style="border-color:#39ff14">TU: <span id="sYou">0</span></div><div style="border-color:#ff2b2b">CPU: <span id="sCpu">0</span></div><div>RACHA: <span id="sRally">0</span></div></div>
+<div class="stage">
+<canvas id="pong" width="800" height="450"></canvas>
+<div class="btn-row"><button class="arcade-btn green" id="pStart">▶ START</button><button class="arcade-btn yellow" id="pPause">⏸ PAUSA</button><button class="arcade-btn" id="pReset">↻ RESET</button></div>
+<p style="color:#8f83c7">W/S o ↑/↓ o mouse/touch. Gana quien llegue a 5.</p>
+</div>
+</div>
+<div class="overlay" id="pOverlay"><div class="overlay-box"><h2 id="pTitle">¡GANASTE!</h2><p id="pSub">5 - 3</p><br><button class="arcade-btn green" id="pAgain">↻ REVANCHA</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/pong.js"></script>
+</body>
+</html>

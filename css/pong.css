@@ -1,0 +1,2 @@
+#pong{width:100%;max-width:800px;box-shadow:0 0 24px rgba(255,154,0,.5);cursor:none}
+@media(pointer:coarse){#pong{cursor:default}}
