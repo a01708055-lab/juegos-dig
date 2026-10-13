@@ -31,11 +31,14 @@ function cpu(){
   turn='X';render();
 }
 function finish(w){
-  render();
-  if(w.p==='D'){score.D++;turnEl.textContent='EMPATE';}
-  else{score[w.p]++;turnEl.textContent='¡GANA '+w.p+'!';w.line.forEach(i=>board.children[i].classList.add('win'));}
-  render();
-  setTimeout(()=>{if(confirm('Gana '+ (w.p==='D'?'NADIE - Empate':w.p) +'. ¿Otra ronda?'))init();},600);
+  if(w.p==='D'){score.D++;}
+  else{score[w.p]++;w.line.forEach(i=>board.children[i].classList.add('win'));}
+  sx.textContent=score.X;so.textContent=score.O;sd.textContent=score.D;
+  turnEl.textContent = w.p==='D' ? 'EMPATE — OTRA RONDA...' : '¡GANA '+w.p+'! — OTRA RONDA...';
+  turnEl.style.borderColor = w.p==='O' ? '#00e5ff' : '#ff2fb3';
+  turnEl.style.color = w.p==='O' ? '#00e5ff' : '#ff2fb3';
+  lock=true;
+  setTimeout(()=>{init();},1400);
 }
 function beep(f){try{const a=new (window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=f;o.type='square';g.gain.value=.06;o.start();o.stop(a.currentTime+.12);}catch(e){}}
 document.getElementById('modePvp').onclick=()=>{mode='pvp';init();};

@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TETRIS 16BITS</title>
+<title>TETRIS | MARIANAS ARCADE</title>
 <link rel="stylesheet" href="css/arcade.css">
 <link rel="stylesheet" href="css/tetris.css">
 </head>
 <body>
-<div class="hud"><div class="p1">PLAYER 01</div><div class="coins">TETRIS • BEST: <span id="tBest">0</span></div><div class="p2"><span class="blink">PRESS START</span></div></div>
+<div class="hud"><div class="p1"><canvas id="hudMini" width="16" height="16" style="width:22px;height:22px;image-rendering:pixelated;vertical-align:middle;background:#000"></canvas> <span id="hudPlayerName">PLAYER 01</span></div><div class="coins">TETRIS • BEST: <span id="tBest">0</span></div><div class="p2"><span class="blink">PRESS START</span></div></div>
 <div class="wrap">
 <a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
 <h1 class="game-title" style="color:#00e5ff">🧱 TETRIS NEON</h1>
@@ -21,6 +21,7 @@
 </div>
 </div>
 <div class="overlay" id="tOverlay"><div class="overlay-box"><h2>GAME OVER</h2><p id="tFinal">0 PTS</p><br><button class="arcade-btn cyan" id="tAgain">↻ OTRA VEZ</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/player.js"></script>
 <script src="js/tetris.js"></script>
 </body>
 </html>

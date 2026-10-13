@@ -32,11 +32,11 @@ function draw(){
 function loop(t){if(!running)return;if(!paused){const interval=Math.max(100,800-(level-1)*70);dropCounter+=t-lastTime;if(dropCounter>interval)drop();draw();}lastTime=t;raf=requestAnimationFrame(loop);}
 function start(){reset();document.getElementById('tOverlay').classList.remove('show');running=true;paused=false;lastTime=performance.now();cancelAnimationFrame(raf);raf=requestAnimationFrame(loop);}
 document.addEventListener('keydown',e=>{
-  if(!running)return;
-  if(e.key==='ArrowLeft'){if(!collide(cur.m,cur.x-1,cur.y))cur.x--;}
-  else if(e.key==='ArrowRight'){if(!collide(cur.m,cur.x+1,cur.y))cur.x++;}
-  else if(e.key==='ArrowDown'){drop();}
-  else if(e.key==='ArrowUp'){tryRotate();}
+  if(!running){ if(['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key)){ e.preventDefault(); start(); } return; }
+  if(e.key==='ArrowLeft'){e.preventDefault();if(!collide(cur.m,cur.x-1,cur.y))cur.x--;}
+  else if(e.key==='ArrowRight'){e.preventDefault();if(!collide(cur.m,cur.x+1,cur.y))cur.x++;}
+  else if(e.key==='ArrowDown'){e.preventDefault();drop();}
+  else if(e.key==='ArrowUp'){e.preventDefault();tryRotate();}
   else if(e.key===' '){e.preventDefault();hardDrop();}
   else if(e.key.toLowerCase()==='p'){paused=!paused;}
   draw();

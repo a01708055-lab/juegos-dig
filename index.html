@@ -3,73 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KORLEONE'S ARCADE - VIDEO GAME 16BITS</title>
+<title>MARIANAS ARCADE - VIDEO GAME 16BITS</title>
 <link rel="stylesheet" href="css/arcade.css">
 </head>
 <body>
 <div class="hud">
-  <div class="p1">PLAYER 01 <span class="hearts">❤❤❤🤍🤍</span></div>
+  <div class="p1"><canvas id="hudMini" width="16" height="16" style="width:22px;height:22px;image-rendering:pixelated;vertical-align:middle;background:#000"></canvas> <span id="hudPlayerName">INVITADO</span> <span class="hearts">❤❤❤</span></div>
   <div class="coins">●●● COINS: <span id="coins">00</span> ⚡</div>
-  <div class="p2">PLAYER 02 <span class="blink">PRESS START</span></div>
+  <div class="p2"><button id="logoutBtn" class="mini-btn" style="display:none">CAMBIAR PJ</button><span class="blink">PRESS START</span></div>
 </div>
 
-<div class="hero">
-  <div class="neon-small">KORLEONE'S TATTOO ARCADE</div>
-  <h1 class="main-title">
-    <span class="l1">VIDEO</span><br>
-    <span class="l2">GAME</span><br>
-    <span class="l3">16BITS</span>
-  </h1>
-  <div class="neon-red">— TATTOO • KICKS • OPEN —</div>
-  <div class="subtitle">ELIGE TU JUEGO_ TUTORIAL_</div>
+<!-- PANTALLA 1: LOGIN / ELIGE PERSONAJE -->
+<div id="loginScreen">
+  <div class="hero">
+    <div class="neon-small">MARIANAS ARCADE</div>
+    <h1 class="main-title"><span class="l1">VIDEO</span><br><span class="l2">GAME</span><br><span class="l3">16BITS</span></h1>
+    <div class="subtitle">INICIAR SESION_ ELIGE TU PERSONAJE_</div>
+  </div>
+  <div class="street"></div>
+  <section class="wrap char-section">
+    <h2 class="pixel section-title">★ 1. ELIGE 1 DE 4 ★</h2>
+    <p class="char-sub">Toca un personaje, ponle nombre, pelo y ropa. Pruébalo con acciones.</p>
+    <div class="char-grid" id="charGrid"></div>
+    <div class="custom-panel">
+      <div class="preview-box">
+        <canvas id="bigPreview" width="16" height="16"></canvas>
+        <div id="previewName" class="pixel">SKATER</div>
+        <div class="preview-tag" id="actionTag">IDLE</div>
+        <div class="opt-row center" id="actionRow" style="justify-content:center;margin-top:10px"></div>
+      </div>
+      <div class="custom-controls">
+        <label class="pixel small-label">NOMBRE</label>
+        <input id="inpName" maxlength="10" placeholder="EJ: MARIANA" autocomplete="off">
+        <label class="pixel small-label">PELO: ESTILO</label>
+        <div class="opt-row" id="hairStyles"></div>
+        <label class="pixel small-label">PELO: COLOR</label>
+        <div class="opt-row" id="hairColors"></div>
+        <label class="pixel small-label">ROPA: COLOR</label>
+        <div class="opt-row" id="shirtColors"></div>
+        <button class="arcade-btn green big-enter" id="enterBtn">▶ ENTRAR AL ARCADE</button>
+      </div>
+    </div>
+  </section>
 </div>
 
-<div class="street"></div>
-
-<main class="grid">
-  <div class="card snake">
-    <div class="card-top">★ SNAKE ★</div>
-    <div class="card-body">
-      <div class="pixel-icon">🐍</div>
-      <p>Come píxeles, crece y no te muerdas. El clásico víbora neón.</p>
-      <div class="controls-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / WASD</div>
-      <a class="play-btn" href="snake.html">▶ JUGAR</a>
-    </div>
+<!-- PANTALLA 2: JUEGOS -->
+<div id="arcadeScreen" style="display:none">
+  <div class="hero small-hero">
+    <div class="neon-small">MARIANAS ARCADE</div>
+    <h1 class="main-title small">BIENVENIDO <span id="welcomeName" style="color:#ffe600">PLAYER</span></h1>
+    <div class="subtitle">ELIGE TU JUEGO_</div>
+    <div class="welcome-row"><canvas id="welcomeMini" width="16" height="16"></canvas><span id="welcomeInfo" class="pixel" style="font-size:10px"></span></div>
   </div>
-
-  <div class="card tetris">
-    <div class="card-top">★ TETRIS ★</div>
-    <div class="card-body">
-      <div class="pixel-icon">🧱</div>
-      <p>Apila bloques, limpia líneas y sube de nivel. Velocidad 16-bit.</p>
-      <div class="controls-hint"><kbd>←</kbd><kbd>→</kbd> mover <kbd>↑</kbd> rotar <kbd>↓</kbd> bajar</div>
-      <a class="play-btn" href="tetris.html">▶ JUGAR</a>
+  <div class="street"></div>
+  <main class="grid">
+    <div class="card snake">
+      <div class="card-top">★ SNAKE ★</div>
+      <div class="card-body"><div class="pixel-icon">🐍</div><p>Come píxeles, crece y no te muerdas.</p><div class="controls-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> / WASD</div><a class="play-btn" href="snake.html">▶ JUGAR</a></div>
     </div>
-  </div>
-
-  <div class="card gato">
-    <div class="card-top">★ GATO ★</div>
-    <div class="card-body">
-      <div class="pixel-icon">❌⭕</div>
-      <p>Tic-tac-toe callejero. 2 jugadores o contra la CPU.</p>
-      <div class="controls-hint">CLIC / TAP para marcar</div>
-      <a class="play-btn" href="gato.html">▶ JUGAR</a>
+    <div class="card tetris">
+      <div class="card-top">★ TETRIS ★</div>
+      <div class="card-body"><div class="pixel-icon">🧱</div><p>Apila bloques y limpia líneas.</p><div class="controls-hint"><kbd>←</kbd><kbd>→</kbd> <kbd>↑</kbd> rotar</div><a class="play-btn" href="tetris.html">▶ JUGAR</a></div>
     </div>
-  </div>
-
-  <div class="card pong">
-    <div class="card-top">★ PONG ★</div>
-    <div class="card-body">
-      <div class="pixel-icon">🏓</div>
-      <p>Duelo de paletas neón contra la máquina. Primero a 5 gana.</p>
-      <div class="controls-hint"><kbd>W</kbd><kbd>S</kbd> / <kbd>↑</kbd><kbd>↓</kbd> / mouse</div>
-      <a class="play-btn" href="pong.html">▶ JUGAR</a>
+    <div class="card gato">
+      <div class="card-top">★ GATO ★</div>
+      <div class="card-body"><div class="pixel-icon">❌⭕</div><p>Tic-tac-toe vs CPU o 2P.</p><div class="controls-hint">CLIC / TAP</div><a class="play-btn" href="gato.html">▶ JUGAR</a></div>
     </div>
-  </div>
-</main>
+    <div class="card pong">
+      <div class="card-top">★ PONG ★</div>
+      <div class="card-body"><div class="pixel-icon">🏓</div><p>Duelo neón, primero a 5.</p><div class="controls-hint"><kbd>W</kbd><kbd>S</kbd> / mouse</div><a class="play-btn" href="pong.html">▶ JUGAR</a></div>
+    </div>
+    <div class="card crossy">
+      <div class="card-top">★ CROSSY ROAD ★</div>
+      <div class="card-body"><div class="pixel-icon">🐤</div><p>El pollito cruza la calle. Esquiva autos.</p><div class="controls-hint"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> cruzar</div><a class="play-btn" href="crossy.html">▶ JUGAR</a></div>
+    </div>
+  </main>
+  <div class="street"></div>
+</div>
 
-<div class="street"></div>
-<footer>© 2026 KORLEONE'S ARCADE • INSERT COIN • HTML + CSS + JS • <span class="blink">PRESS START</span></footer>
+<footer>© 2026 MARIANAS ARCADE • INSERT COIN • HTML + CSS + JS • <span class="blink">PRESS START</span></footer>
+<script src="js/player.js"></script>
 <script src="js/home.js"></script>
 </body>
 </html>

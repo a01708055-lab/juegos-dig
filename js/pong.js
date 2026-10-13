@@ -46,7 +46,11 @@ function end(win){
   document.getElementById('pSub').textContent=you.score+' - '+cpu.score;
   document.getElementById('pOverlay').classList.add('show');
 }
-document.addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=true;if(e.key===' ')e.preventDefault();if(e.key.toLowerCase()==='p'&&running)paused=!paused;if(paused||!running)return;if(!running)return;});
+document.addEventListener('keydown',e=>{
+  const k=e.key.toLowerCase();
+  if(k==='arrowup'||k==='w'||k==='arrowdown'||k==='s'||k==='arrowleft'||k==='a'||k==='arrowright'||k==='d'){e.preventDefault();if(!running){start();return;}}
+  if(k===' '){e.preventDefault();if(!running){start();return;}}
+  keys[e.key.toLowerCase()]=true;if(e.key.toLowerCase()==='p'&&running)paused=!paused;if(paused||!running)return;if(!running)return;});
 document.addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
 cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();const y=(e.clientY-r.top)*(H/r.height);you.y=y-you.h/2;you.y=Math.max(0,Math.min(H-you.h,you.y));});
 cv.addEventListener('touchmove',e=>{e.preventDefault();const r=cv.getBoundingClientRect();const y=(e.touches[0].clientY-r.top)*(H/r.height);you.y=y-you.h/2;},{passive:false});

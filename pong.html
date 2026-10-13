@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PONG 16BITS</title>
+<title>PONG | MARIANAS ARCADE</title>
 <link rel="stylesheet" href="css/arcade.css">
 <link rel="stylesheet" href="css/pong.css">
 </head>
 <body>
-<div class="hud"><div class="p1">YOU <span id="hYou">0</span></div><div class="coins">PONG • FIRST TO 5</div><div class="p2">CPU <span id="hCpu">0</span></div></div>
+<div class="hud"><div class="p1"><span id="hudPlayerName">YOU</span> <span id="hYou">0</span></div><div class="coins">PONG • FIRST TO 5</div><div class="p2">CPU <span id="hCpu">0</span></div></div>
 <div class="wrap">
 <a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
 <h1 class="game-title" style="color:#ff9a00">🏓 PONG NEON</h1>
@@ -19,6 +19,7 @@
 </div>
 </div>
 <div class="overlay" id="pOverlay"><div class="overlay-box"><h2 id="pTitle">¡GANASTE!</h2><p id="pSub">5 - 3</p><br><button class="arcade-btn green" id="pAgain">↻ REVANCHA</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/player.js"></script>
 <script src="js/pong.js"></script>
 </body>
 </html>

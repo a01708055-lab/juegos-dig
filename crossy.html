@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CROSSY ROAD | MARIANAS ARCADE</title>
+<link rel="stylesheet" href="css/arcade.css">
+<link rel="stylesheet" href="css/crossy.css">
+</head>
+<body>
+<div class="hud"><div class="p1"><canvas id="hudMini" width="16" height="16" style="width:22px;height:22px;image-rendering:pixelated;vertical-align:middle;background:#000"></canvas> <span id="hudPlayerName">PLAYER 01</span></div><div class="coins">CROSSY • BEST: <span id="cBest">0</span></div><div class="p2"><span class="blink">● REC</span></div></div>
+<div class="wrap">
+<a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
+<h1 class="game-title" style="color:#ffe600">🐤 CROSSY ROAD</h1>
+<div class="scorebar"><div>SCORE <span id="cScore">0</span></div><div>NIVEL <span id="cLevel">1</span></div><div>AVANCE <span id="cProg">0</span>/10</div></div>
+<div class="stage">
+<canvas id="crossy" width="450" height="550"></canvas>
+<div class="btn-row"><button class="arcade-btn green" id="cStart">▶ START</button><button class="arcade-btn yellow" id="cPause">⏸ PAUSA</button><button class="arcade-btn" id="cReset">↻ RESET</button></div>
+<div class="mobile-pad"><span></span><button id="cUp">▲</button><span></span><button id="cLeft">◀</button><button id="cDown">▼</button><button id="cRight">▶</button></div>
+<p style="color:#8f83c7">Flechas / WASD para cruzar. Llega arriba sin que te atropellen. Cada meta = +100 y más velocidad.</p>
+</div>
+</div>
+<div class="overlay" id="cOverlay"><div class="overlay-box"><h2 id="cTitle">¡APLASTADO!</h2><p id="cFinal">0 PTS</p><br><button class="arcade-btn green" id="cAgain">↻ OTRA VEZ</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/player.js"></script>
+<script src="js/crossy.js"></script>
+</body>
+</html>

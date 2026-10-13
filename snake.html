@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SNAKE 16BITS</title>
+<title>SNAKE | MARIANAS ARCADE</title>
 <link rel="stylesheet" href="css/arcade.css">
 <link rel="stylesheet" href="css/snake.css">
 </head>
 <body>
-<div class="hud"><div class="p1">PLAYER 01</div><div class="coins">SNAKE • BEST: <span id="best">0</span></div><div class="p2"><span class="blink">● REC</span></div></div>
+<div class="hud"><div class="p1"><canvas id="hudMini" width="16" height="16" style="width:22px;height:22px;image-rendering:pixelated;vertical-align:middle;background:#000"></canvas> <span id="hudPlayerName">PLAYER 01</span></div><div class="coins">SNAKE • BEST: <span id="best">0</span></div><div class="p2"><span class="blink">● REC</span></div></div>
 <div class="wrap">
 <a class="back" href="index.html">◀ VOLVER AL ARCADE</a>
 <h1 class="game-title" style="color:#39ff14">🐍 SNAKE NEON</h1>
@@ -20,6 +20,7 @@
 </div>
 </div>
 <div class="overlay" id="overlay"><div class="overlay-box"><h2 id="ovTitle">GAME OVER</h2><p id="ovScore">SCORE 0</p><br><button class="arcade-btn green" id="againBtn">↻ JUGAR OTRA VEZ</button><br><br><a class="back" href="index.html">VOLVER</a></div></div>
+<script src="js/player.js"></script>
 <script src="js/snake.js"></script>
 </body>
 </html>
